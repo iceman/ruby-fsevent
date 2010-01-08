@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ruby-fsevent"
-    gem.summary = %Q{A native extension exposing the OS X FSEvent API.}
+    gem.summary = %Q{A native extension exposing the OS X FSEvent API. Ruby 1.9 Compatible.}
     gem.description = %Q{
     A native extension exposing the OS X FSEvent API. Register directories you want to watch and a callback will fire whenever a change occurs in the registered directories.
     }
@@ -39,7 +39,7 @@ task :spec => :check_dependencies
 task :default => :spec
 
 task :make do
-  system "cd ext && ruby extconf.rb && make"
+  system "cd ext && ruby1.9 extconf.rb && make"
 end
 
 require 'rake/rdoctask'
